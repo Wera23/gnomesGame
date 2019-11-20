@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, Typography } from  '@material-ui/core/';
-import stylesLink from '../MenuLinks/MenuLinks.css'
+import styleToolbar from '../Styles/Toolbar.css'
 
 const menuLinks = () => (
-    <div className={stylesLink.links}>
+    <div>
         <Typography variant="h6"> 
-        <Link className={stylesLink.link}>Gnomes</Link>
-        <Link className={stylesLink.link}>Trolls</Link>
+        <Link className={styleToolbar.link}>Gnomes</Link>
+        <Link className={styleToolbar.link}>Trolls</Link>
         </Typography>
     </div>
 )

@@ -1,6 +1,10 @@
 import React from "react";
 import MonsterElement from "../MonsterElement/MonsterElement";
-import { Grid } from "@material-ui/core/";
+import { Table } from "@material-ui/core/";
+import stylesMonster from "../Styles/Monster.css";
+
+
+
 
 class MonstersList extends React.Component {
   constructor(props) {
@@ -23,10 +27,9 @@ class MonstersList extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          gnomes: data,
+          gnomes: data.filter((element, i) => i < 20),
           loading: false
         });
-        console.log(data[99].name, "sila", data[0].strenght);
       })
       .catch(err => {
         this.setState({
@@ -43,17 +46,21 @@ class MonstersList extends React.Component {
 
   render() {
     const { loading, gnomes } = this.state;
-
+    
     return (
-      <div>
-        <p>0987654321</p>
+      <div className={stylesMonster.listOverlay}>
         {!loading && (
-          <Grid>
-            <p>123345677890 </p>
+          <Table >
             {gnomes.map(gnome => (
-              <li key={gnome.id}>{gnome.name}</li>
+              // <li key={gnome.id}>{gnome.name}</li>
+              <MonsterElement
+                key={gnome.id}
+                name={gnome.name}
+                age={gnome.age}
+                strenght={gnome.strenght}
+              />
             ))}
-          </Grid>
+          </Table>
         )}
       </div>
     );

@@ -1,0 +1,9 @@
+.monsterCell{
+    display: flex;
+    flex-direction: column;
+}
+
+.listOverlay{
+    width: 90vw;
+    border: 2px solid red;
+}
