@@ -49,6 +49,7 @@ class MonstersList extends React.Component {
         {!loading && (
          <Container>
         <Typography variant="h4">Gnomes</Typography>
+        <div className={stylesMonster.monsterList}>
           <Paper>            
             <Table>
               {gnomes.map(gnome => (
@@ -62,6 +63,8 @@ class MonstersList extends React.Component {
               ))}
             </Table>
           </Paper>
+          </div>
+        
           </Container>
         )}
       </div>

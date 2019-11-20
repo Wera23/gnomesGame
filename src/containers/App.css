@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+
+* {
+  font-family: 'Work Sans', sans-serif;
+}
+
 .App{
   background-color: rgba(240, 239, 239, 0.938);
 }

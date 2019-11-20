@@ -1,14 +1,18 @@
 import React from "react";
 import styleMonster from "../Styles/Monster.css";
-import { TableBody, TableCell } from "@material-ui/core/";
+import { Avatar, TableBody, TableCell } from "@material-ui/core/";
 
 const MonsterElement = props => (
   <div className={styleMonster.tableBody}>
     <TableBody >
+      
       <TableCell className={styleMonster.monsterCell}>
-        <div>
-          <p>{props.name}</p>
-          <p>Age: {props.age}</p>
+     <div className={styleMonster.monsterProfile}>
+      <Avatar>G</Avatar>
+        <div className={styleMonster.data}>
+          <span className={styleMonster.name}>{props.name}</span>
+          <span className={styleMonster.age}>Age: {props.age}</span>
+        </div>
         </div>
       </TableCell>
       <TableCell className={styleMonster.monsterCell}> Strenght: {props.strenght} </TableCell>
