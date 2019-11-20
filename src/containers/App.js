@@ -20,6 +20,8 @@ const theme = createMuiTheme({
   }
 });
 
+
+
 class App extends React.Component {
   state = {
     name: "Wera Chodanionek",
@@ -28,6 +30,8 @@ class App extends React.Component {
       "https://cdn.pixabay.com/photo/2017/08/07/18/57/dog-2606759_1280.jpg",
     logo: "Frontend"
   };
+
+
 
   
 

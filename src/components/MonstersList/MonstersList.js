@@ -18,6 +18,15 @@ class MonstersList extends React.Component {
     };
   }
 
+  deleteGnome = (id) => {
+    console.log('AAA')
+   let gnomes = [...this.state.gnomes];
+    console.log(gnomes);
+   gnomes.splice(id, 1);
+    this.setState({ gnomes: gnomes });
+    return;
+  };
+
   componentDidMount() {
     this.setState({ loading: true });
     fetch(`http://master.datasource.jazzy-hr.jzapp.io/api/v1/gnomes`)
@@ -53,12 +62,13 @@ class MonstersList extends React.Component {
           <Paper>            
             <Table>
               {gnomes.map(gnome => (
-                // <li key={gnome.id}>{gnome.name}</li>
                 <MonsterElement
                   key={gnome.id}
                   name={gnome.name}
                   age={gnome.age}
                   strenght={gnome.strenght}
+                  deleteGnome={()=> this.deleteGnome(gnome.id)}
+
                 />
               ))}
             </Table>

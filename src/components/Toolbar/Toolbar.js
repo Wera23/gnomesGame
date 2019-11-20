@@ -14,5 +14,4 @@ const toolbar = (props) => (
 
     </div>
 )
-
 export default toolbar;
