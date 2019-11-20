@@ -8,7 +8,6 @@ import User from '../User/User'
 const toolbar = (props) => (
     <div className={stylesToolbar.toolbar}>
         <Logo logo={props.logo} />
-
         <MenuLinks />
         <ButtonCreateMonster />
         <User name={props.name} level={props.level} avatar={props.avatar}/>

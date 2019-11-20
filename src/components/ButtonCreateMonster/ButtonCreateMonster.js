@@ -1,12 +1,12 @@
 import React from "react";
-import { Button } from "@material-ui/core/";
+import { Button, Typography } from "@material-ui/core/";
 
-const buttonCreateMonster = (props) => (
-    <div>
+const buttonCreateMonster = props => (
+  <div>
     <Button variant="contained" color="secondary">
-     Create Monster
+      <Typography coolor="white"> Create Monster </Typography>
     </Button>
   </div>
-)
+);
 
 export default buttonCreateMonster;

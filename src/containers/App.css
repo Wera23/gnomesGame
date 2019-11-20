@@ -2,10 +2,11 @@
 
 * {
   font-family: 'Work Sans', sans-serif;
+  color: #260031;
 }
 
 .App{
-  background-color: rgba(240, 239, 239, 0.938);
+  background-color: #f9fafc;
 }
 
 .AppContent{

@@ -4,7 +4,7 @@ import { Avatar, TableBody, TableCell } from "@material-ui/core/";
 
 const MonsterElement = props => (
   <div className={styleMonster.tableBody}>
-    <TableBody >
+    <TableBody>
       
       <TableCell className={styleMonster.monsterCell}>
      <div className={styleMonster.monsterProfile}>
@@ -15,7 +15,7 @@ const MonsterElement = props => (
         </div>
         </div>
       </TableCell>
-      <TableCell className={styleMonster.monsterCell}> Strenght: {props.strenght} </TableCell>
+      <TableCell className={styleMonster.monsterCell}> <span> Strenght: {props.strenght} </span> </TableCell>
     </TableBody>
   </div>
 );
