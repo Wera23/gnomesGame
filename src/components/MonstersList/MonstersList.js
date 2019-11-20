@@ -1,10 +1,7 @@
 import React from "react";
 import MonsterElement from "../MonsterElement/MonsterElement";
-import { Table } from "@material-ui/core/";
+import { Table, Paper, Typography, Container } from "@material-ui/core/";
 import stylesMonster from "../Styles/Monster.css";
-
-
-
 
 class MonstersList extends React.Component {
   constructor(props) {
@@ -46,21 +43,26 @@ class MonstersList extends React.Component {
 
   render() {
     const { loading, gnomes } = this.state;
-    
+
     return (
-      <div className={stylesMonster.listOverlay}>
+      <div className={stylesMonster.monsterList}>
         {!loading && (
-          <Table >
-            {gnomes.map(gnome => (
-              // <li key={gnome.id}>{gnome.name}</li>
-              <MonsterElement
-                key={gnome.id}
-                name={gnome.name}
-                age={gnome.age}
-                strenght={gnome.strenght}
-              />
-            ))}
-          </Table>
+         <Container>
+        <Typography variant="h4">Gnomes</Typography>
+          <Paper>            
+            <Table>
+              {gnomes.map(gnome => (
+                // <li key={gnome.id}>{gnome.name}</li>
+                <MonsterElement
+                  key={gnome.id}
+                  name={gnome.name}
+                  age={gnome.age}
+                  strenght={gnome.strenght}
+                />
+              ))}
+            </Table>
+          </Paper>
+          </Container>
         )}
       </div>
     );

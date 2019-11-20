@@ -3,7 +3,17 @@
     flex-direction: column;
 }
 
-.listOverlay{
-    width: 90vw;
-    border: 2px solid red;
+.monsterCell{
+    width: 50vw;
+}
+
+.tableBody{
+display: flex;
+width: 60vw
+}
+
+.monsterList{
+    display: flex;   
+    justify-content: center;
+    align-items: center;
 }

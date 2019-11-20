@@ -3,15 +3,15 @@ import styleMonster from "../Styles/Monster.css";
 import { TableBody, TableCell } from "@material-ui/core/";
 
 const MonsterElement = props => (
-  <div>
-    <TableBody>
-      <TableCell>
-        <div className={styleMonster.monsterCell}>
+  <div className={styleMonster.tableBody}>
+    <TableBody >
+      <TableCell className={styleMonster.monsterCell}>
+        <div>
           <p>{props.name}</p>
           <p>Age: {props.age}</p>
         </div>
       </TableCell>
-      <TableCell> Strenght: {props.strenght} </TableCell>
+      <TableCell className={styleMonster.monsterCell}> Strenght: {props.strenght} </TableCell>
     </TableBody>
   </div>
 );

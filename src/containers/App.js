@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../containers/App.css";
 import Toolbar from "../components/Toolbar/Toolbar";
 import { MonstersList } from "../components/MonstersList/MonstersList";
+import { Container } from  '@material-ui/core/';
 
 class App extends React.Component {
   state = {
@@ -15,13 +16,15 @@ class App extends React.Component {
   render() {
     return (
       <div className={styles.App}>
+        
         <Toolbar
           name={this.state.name}
           level={this.state.level}
           avatar={this.state.avatar}
           logo={this.state.logo}
         />
-        <MonstersList />
+        <Container> <MonstersList /></Container>
+       
       </div>
     );
   }

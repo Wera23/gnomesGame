@@ -1,4 +1,10 @@
 .App{
-  height: 100vh;
-  background-color: rgba(240, 239, 239, 0.938)
+  background-color: rgba(240, 239, 239, 0.938);
+}
+
+.AppContent{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
