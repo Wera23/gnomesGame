@@ -27,6 +27,22 @@ class MonstersList extends React.Component {
     return;
   };
 
+  
+  editGnome = (id) => {
+    console.log('AAA')
+   let gnomes = [...this.state.gnomes];
+    console.log(gnomes);
+   gnomes.setState({
+     name: 'Wera',
+     age: 23,
+     id: 100,
+     strenght: 100
+   })
+   console.log(gnomes)
+    return;
+
+  };
+
   componentDidMount() {
     this.setState({ loading: true });
     fetch(`http://master.datasource.jazzy-hr.jzapp.io/api/v1/gnomes`)
@@ -47,7 +63,6 @@ class MonstersList extends React.Component {
       loading: true
     });
 
-    console.log(this.state.gnomes, "tutaj");
   }
 
   render() {
@@ -66,8 +81,10 @@ class MonstersList extends React.Component {
                   key={gnome.id}
                   name={gnome.name}
                   age={gnome.age}
+                  nameG={gnome.name}
                   strenght={gnome.strenght}
                   deleteGnome={()=> this.deleteGnome(gnome.id)}
+                  editGnome={() => this.deleteGnome(gnome.id) }
 
                 />
               ))}
