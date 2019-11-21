@@ -81,7 +81,9 @@ class MonstersList extends React.Component {
                   key={gnome.id}
                   name={gnome.name}
                   age={gnome.age}
-                  nameG={gnome.name}
+                  nameEdit={gnome.name}
+                  ageEdit={gnome.age}
+                  strenghtEdit={gnome.strenght}
                   strenght={gnome.strenght}
                   deleteGnome={()=> this.deleteGnome(gnome.id)}
                   editGnome={() => this.deleteGnome(gnome.id) }

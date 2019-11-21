@@ -32,14 +32,15 @@ export default function AlertDialog(props) {
       >
         <DialogTitle id="form-dialog-title">Edit monster</DialogTitle>
         <DialogContent>
+          <TextField value={props.nameEdit} margin="normal" label="Name" />
+
+          <TextField value={props.ageEdit} margin="normal" label="Age" />
+
           <TextField
-            id="outlined-helperText"
-            
-            value={props.nameG}
+            value={props.strenght}
             margin="normal"
-            variant="outlined" />
-
-
+            label="Strenght"
+          />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">

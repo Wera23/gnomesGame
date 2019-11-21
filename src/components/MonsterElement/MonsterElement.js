@@ -25,7 +25,7 @@ const MonsterElement = props => (
           Delete
         </Button>
         
-        <EditMonster nameG={props.nameG} />
+        <EditMonster nameEdit={props.nameEdit} ageEdit={props.ageEdit} strenght={props.strenght} />
 
       </TableCell>
     </TableBody>
