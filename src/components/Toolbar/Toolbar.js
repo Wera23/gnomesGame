@@ -9,7 +9,7 @@ const toolbar = (props) => (
     <div className={stylesToolbar.toolbar}>
         <Logo logo={props.logo} />
         <MenuLinks />
-        <CreateNewMonster />
+        <CreateNewMonster nameNew={props.nameNew} ageNew={props.ageNew} strenghtNew={props.strenghtNew} />
         <User name={props.name} level={props.level} avatar={props.avatar}/>
 
     </div>

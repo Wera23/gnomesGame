@@ -1,7 +1,7 @@
 import React from "react";
 import styleMonster from "../Styles/Monster.css";
 import { Avatar, TableBody, Button, TableCell } from "@material-ui/core/";
-import EditMonster from '../EditMonster/EditMonster'
+import EditMonster from "../EditMonster/EditMonster";
 
 const MonsterElement = props => (
   <div className={styleMonster.tableBody}>
@@ -17,16 +17,18 @@ const MonsterElement = props => (
       </TableCell>
 
       <TableCell className={styleMonster.monsterCell}>
-        {" "}
-        <span> Strenght: {props.strenght} </span>{" "}
+        <span onClick={props.gnomeChange}> Strenght: {props.strenght} </span>{" "}
       </TableCell>
       <TableCell className={styleMonster.monsterCell}>
-        <Button onClick={props.deleteGnome}>
-          Delete
-        </Button>
-        
-        <EditMonster nameEdit={props.nameEdit} ageEdit={props.ageEdit} strenght={props.strenght} />
+        <Button onClick={props.deleteGnome}>Delete</Button>
 
+        <EditMonster
+         
+          strenght={props.strenght}
+          name={props.name}
+          gnomeSubmit={props.gnomeSubmit}
+          gnomeChange={props.gnomeChange}
+        />
       </TableCell>
     </TableBody>
   </div>

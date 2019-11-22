@@ -4,8 +4,7 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  DialogTitle,
-  TextField
+  DialogTitle
 } from "@material-ui/core/";
 
 export default function AlertDialog(props) {
@@ -29,24 +28,27 @@ export default function AlertDialog(props) {
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
+      
       >
+
+        
         <DialogTitle id="form-dialog-title">Edit monster</DialogTitle>
         <DialogContent>
-          <TextField value={props.nameEdit} margin="normal" label="Name" />
-
-          <TextField value={props.ageEdit} margin="normal" label="Age" />
-
-          <TextField
-            value={props.strenght}
-            margin="normal"
-            label="Strenght"
-          />
+     
+          <form onSubmit={props.gnomeSubmit}>
+            <input
+              defaultValue={props.strenght}                            
+              margin="normal"
+              label="Strenght"
+              onChange={props.gnomeChange}
+            />
+          </form>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={props.gnomeChange} color="primary">
             Save
           </Button>
         </DialogActions>

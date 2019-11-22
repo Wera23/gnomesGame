@@ -18,29 +18,12 @@ class MonstersList extends React.Component {
     };
   }
 
-  deleteGnome = (id) => {
-    console.log('AAA')
-   let gnomes = [...this.state.gnomes];
-    console.log(gnomes);
-   gnomes.splice(id, 1);
+  deleteGnome = id => {
+    console.log("AAA");
+    let gnomes = [...this.state.gnomes];
+    gnomes.splice(id, 1);
     this.setState({ gnomes: gnomes });
     return;
-  };
-
-  
-  editGnome = (id) => {
-    console.log('AAA')
-   let gnomes = [...this.state.gnomes];
-    console.log(gnomes);
-   gnomes.setState({
-     name: 'Wera',
-     age: 23,
-     id: 100,
-     strenght: 100
-   })
-   console.log(gnomes)
-    return;
-
   };
 
   componentDidMount() {
@@ -62,8 +45,14 @@ class MonstersList extends React.Component {
     this.setState({
       loading: true
     });
-
   }
+
+  gnomeChange = event => {
+    this.setState({
+      strenght: event.target.defaultValue
+    });
+    console.log(this.state)
+  };
 
   render() {
     const { loading, gnomes } = this.state;
@@ -71,29 +60,27 @@ class MonstersList extends React.Component {
     return (
       <div className={stylesMonster.monsterList}>
         {!loading && (
-         <Container>
-        <Typography variant="h4">Gnomes</Typography>
-        <div className={stylesMonster.monsterList}>
-          <Paper>            
-            <Table>
-              {gnomes.map(gnome => (
-                <MonsterElement
-                  key={gnome.id}
-                  name={gnome.name}
-                  age={gnome.age}
-                  nameEdit={gnome.name}
-                  ageEdit={gnome.age}
-                  strenghtEdit={gnome.strenght}
-                  strenght={gnome.strenght}
-                  deleteGnome={()=> this.deleteGnome(gnome.id)}
-                  editGnome={() => this.deleteGnome(gnome.id) }
-
-                />
-              ))}
-            </Table>
-          </Paper>
-          </div>
-        
+          <Container>
+            <Typography variant="h4">Gnomes</Typography>
+            <div className={stylesMonster.monsterList}>
+              <Paper>
+                <Table>
+                  {gnomes.map(gnome => (
+                    <MonsterElement
+                      key={gnome.id}
+                      name={gnome.name}
+                      age={gnome.age}
+                      nameNew={gnome.name}
+                      ageNew={gnome.age}
+                      strenghtNew={gnome.strenghtNew}
+                      strenght={gnome.strenght}
+                      deleteGnome={() => this.deleteGnome(gnome.id)}
+                      gnomeChange={event => this.gnomeChange(event, gnome.id)}
+                    />
+                  ))}
+                </Table>
+              </Paper>
+            </div>
           </Container>
         )}
       </div>

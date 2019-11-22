@@ -13,7 +13,6 @@ export default function AlertDialog(props) {
 
   const handleClickOpen = () => {
     setOpen(true);
-    
   };
 
   const handleClose = () => {
@@ -38,13 +37,7 @@ export default function AlertDialog(props) {
       >
         <DialogTitle id="form-dialog-title">Create new monster</DialogTitle>
         <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            id={props.name}
-            label="Name"
-            type="text"
-          />
+          <TextField autoFocus margin="dense" label="Name" type="text" value={props.nameNew} />
 
           <TextField
             autoFocus
@@ -52,18 +45,16 @@ export default function AlertDialog(props) {
             id={props.age}
             label="Age"
             type="text"
+            value={props.ageNew}
           />
 
           <TextField
             autoFocus
             margin="dense"
-            id={props.strenght}
+            value={props.strenghtNew}
             label="Strenght"
             type="text"
           />
-
-
-
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
