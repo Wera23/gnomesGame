@@ -1,0 +1,13 @@
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: $app_background;
+  }
+  
+  .app{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

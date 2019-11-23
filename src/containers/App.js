@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../containers/App.css";
 import Toolbar from "../components/Toolbar/Toolbar";
 import { MonstersList } from "../components/MonstersList/MonstersList";
 import { Container} from "@material-ui/core/";
@@ -27,9 +26,11 @@ class App extends React.Component {
     name: "Wera Chodanionek",
     level: "Begginer player",
     avatar:
-      "https://cdn.pixabay.com/photo/2017/08/07/18/57/dog-2606759_1280.jpg",
+      "https://i.ibb.co/1Lqv9Ch/avatar.jpg",
     logo: "Frontend"
   };
+
+  
 
 
 
@@ -39,7 +40,6 @@ class App extends React.Component {
 
        
     return (
-      <div className={styles.App}>
         <MuiThemeProvider theme={theme}>          
           <Toolbar 
             name={this.state.name}
@@ -52,7 +52,6 @@ class App extends React.Component {
           </Container>
           
         </MuiThemeProvider>
-      </div>
     );
   }
 }

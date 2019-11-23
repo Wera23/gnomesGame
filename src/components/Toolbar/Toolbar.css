@@ -6,3 +6,8 @@
     justify-content: space-around;
     align-items: center; 
 }
+
+
+.link{
+    padding: 20px !important;
+}

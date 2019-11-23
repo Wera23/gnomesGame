@@ -19,16 +19,27 @@ const MonsterElement = props => (
       <TableCell className={styleMonster.monsterCell}>
         <span onClick={props.gnomeChange}> Strenght: {props.strenght} </span>{" "}
       </TableCell>
-      <TableCell className={styleMonster.monsterCell}>
-        <Button onClick={props.deleteGnome}>Delete</Button>
+      <TableCell className={styleMonster.monsterCellAction}>
+        <div className={styleMonster.monsterCellActionBtn} >
+          <Button
+            color="secondary"
+            variant="outlined"
+            small
+            onClick={props.deleteGnome}
+          >
+            Delete
+          </Button>
 
-        <EditMonster
-         
-          strenght={props.strenght}
-          name={props.name}
-          gnomeSubmit={props.gnomeSubmit}
-          gnomeChange={props.gnomeChange}
-        />
+          <div className={styleMonster.separate}></div>
+
+          <EditMonster
+            strenght={props.strenght}
+            age={props.age}
+            name={props.name}
+            gnomeSubmit={props.gnomeSubmit}
+            gnomeChange={props.gnomeChange}
+          />
+        </div>
       </TableCell>
     </TableBody>
   </div>
