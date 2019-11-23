@@ -1,4 +1,11 @@
 .toolbar {
+    height: 60px;
+    background-color: $toolbar_background;
+    border-bottom: 1px solid rgb(197, 197, 197);   
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+
     &__logo {
         margin-right: 20px;
     }
