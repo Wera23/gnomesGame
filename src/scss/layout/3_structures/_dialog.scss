@@ -1,0 +1,19 @@
+.dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
+    &__dialog-backround{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        width: 230px;
+        height: 230px;
+    }
+
+    
+
+
+}

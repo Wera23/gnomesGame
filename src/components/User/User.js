@@ -1,19 +1,20 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Avatar, Typography } from "@material-ui/core";
-import stylesUser from '../User/User.css'
 
-const user = props => (
-  <div className={stylesUser.panel}>
-    <Avatar
-      alt="user"
-      src={props.avatar}
-      size="20"
-    />
-    <div className={stylesUser.dataUser}>
-      <Typography variant="h6"> {props.name} </Typography>
-      <Typography variant="body2"> {props.level} </Typography>
+
+const User = () => {
+  const user = useSelector(state => state.user.current);
+
+  return (
+    <div className='user'>
+      <Avatar alt="user" src={user.avatar} size="20" />
+      <div className='user__user-panel'>
+        <Typography variant="h6"> {user.name} </Typography>
+        <Typography variant="body2"> {user.level} </Typography>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
-export default user;
+export default User;

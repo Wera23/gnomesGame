@@ -1,19 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import './scss/style.scss';
-import App from './containers/App';
-import * as serviceWorker from './serviceWorker';
-import { store, theme } from './_helpers';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import "./scss/style.scss";
+import App from "./containers/App";
+import * as serviceWorker from "./serviceWorker";
+import { store, theme } from "./_helpers";
 
 ReactDOM.render(
-    <Provider store={store}>
-        <MuiThemeProvider theme={theme}>  
-            <App />
-        </MuiThemeProvider>
-    </Provider>, 
-    document.getElementById('root')
+  <Provider store={store}>
+    <MuiThemeProvider theme={theme}>
+      <App />
+    </MuiThemeProvider>
+  </Provider>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

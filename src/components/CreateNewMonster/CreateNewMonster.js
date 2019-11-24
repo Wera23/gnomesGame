@@ -1,12 +1,11 @@
 import React from "react";
 import {
-  Button,
   Dialog,
   DialogActions,
   DialogContent,
   TextField
 } from "@material-ui/core/";
-import stylesMonster from "../Styles/Monster.css";
+import { StyledButton } from "../Forms/StyledButton";
 
 export default function AlertDialog(props) {
   const [open, setOpen] = React.useState(false);
@@ -21,27 +20,25 @@ export default function AlertDialog(props) {
 
   return (
     <div>
-      <Button color="secondary" variant="contained" onClick={handleClickOpen}>
-       Create Monster
-      </Button>
+      <StyledButton color="secondary" variant="contained" onClick={handleClickOpen}>
+        Create Monster
+      </StyledButton>
 
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
-        className={stylesMonster.backgroundDialog}
         
       >
-        <div className={stylesMonster.dialogContent}>
-          <div className={stylesMonster.dialogImageCreate} />
-         
+        <div className='dialog'>
+          <div className='dialog__dialog-background' />
 
           <DialogContent>
             <form onSubmit={props.gnomeSubmit}>
               <TextField
                 margin="normal"
                 label="Name"
-                                fullWidth
+                fullWidth
                 color="secondary"
               />
 
@@ -60,29 +57,28 @@ export default function AlertDialog(props) {
               />
             </form>
           </DialogContent>
-        <DialogActions>
-          <Button
-            variant="outlined"
-            size="small"
-            color="secondary"
-            type="onSubmit"
-            onClick={handleClose}
-          >
-            Cancel
-          </Button>
-          <Button
-            variant="outlined"
-            size="small"
-            color="secondary"
-            type="onSubmit"
-            onClick={props.gnomeChange}
-          >
-            Save
-          </Button>
-        </DialogActions>
+          <DialogActions>
+          <StyledButton
+              variant="outlined"
+              size="small"
+              color="secondary"
+              type="onSubmit"
+              onClick={handleClose}
+            >
+              Cancel
+            </StyledButton>
+            <StyledButton
+              variant="outlined"
+              size="small"
+              color="secondary"
+              type="onSubmit"
+              onClick={props.gnomeChange}
+            >
+              Save
+            </StyledButton>
+          </DialogActions>
         </div>
       </Dialog>
-      
     </div>
   );
 }

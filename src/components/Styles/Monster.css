@@ -47,30 +47,3 @@ width: 20vw;}
 }
 
 
-
-  .dialogImage,
-  .dialogImageCreate{
-     
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    width: 230px;
-    height: 230px;
-  }
-
-  .dialogImageCreate{
-    background-image: url('../../assets/imgMonster2.jpg');
-  }
-
-  .dialogImage{
-    background-image: url('../../assets/imgMonster.jpg');
-  }
-
-  .dialogContent{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-  }
-

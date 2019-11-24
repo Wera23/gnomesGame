@@ -1,15 +1,11 @@
-import React from 'react';
-import { Button } from  '@material-ui/core';
+import React from "react";
+import { StyledButton } from "../Forms/StyledButton";
 
 const menuLinks = () => (
-    <>
+  <>
+    <StyledButton>Gnomes</StyledButton>
+    <StyledButton>Trolls</StyledButton>
+  </>
+);
 
-       
-        
-       <Button>Gnomes</Button>
-        <Button >Trolls</Button>
-       
-    </>
-)
-
-export default menuLinks
+export default menuLinks;

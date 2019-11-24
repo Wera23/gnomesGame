@@ -9,8 +9,7 @@ const toolbar = (props) => (
         <Logo logo={props.logo} />
         <MenuLinks />
         <CreateNewMonster nameNew={props.nameNew} ageNew={props.ageNew} strenghtNew={props.strenghtNew} />
-        <User name={props.name} level={props.level} avatar={props.avatar}/>
-
+        <User/>
     </div>
 )
 export default toolbar;
