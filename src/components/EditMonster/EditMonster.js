@@ -6,7 +6,6 @@ import {
   DialogContent,
   TextField
 } from "@material-ui/core/";
-import stylesMonster from "../Styles/Monster.css";
 
 export default function AlertDialog(props) {
   const [open, setOpen] = React.useState(false);
@@ -29,11 +28,10 @@ export default function AlertDialog(props) {
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
-        className={stylesMonster.backgroundDialog}
         
       >
-        <div className={stylesMonster.dialogContent}>
-          <div className={stylesMonster.dialogImage} />
+        <div className='dialog'>
+          <div className='dialog-background' />
          
 
           <DialogContent>

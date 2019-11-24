@@ -19,6 +19,10 @@ const MonsterElement = props => (
       <TableCell className={styleMonster.monsterCell}>
         <span onClick={props.gnomeChange}> Strenght: {props.strenght} </span>{" "}
       </TableCell>
+
+
+
+      
       <TableCell className={styleMonster.monsterCellAction}>
         <div className={styleMonster.monsterCellActionBtn} >
           <Button

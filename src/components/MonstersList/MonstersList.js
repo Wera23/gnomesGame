@@ -1,23 +1,30 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import MonsterElement from "../MonsterElement/MonsterElement";
-import { Table, Paper, Typography, Container, Button, CircularProgress } from "@material-ui/core/";
-import { handleGnomesData, changeGnome } from '../../_store/actions';
-import stylesMonster from "../Styles/Monster.css";
-
+import { useSelector, useDispatch } from "react-redux";
+import {
+  Paper,
+  Typography,
+  Container,
+  TableBody,
+  TableRow,
+  TableCell,
+  CircularProgress
+} from "@material-ui/core/";
+import MetricMonster from "../SingeMonster/MetricMonster";
+import PropertiesMonster from "../SingeMonster/PropertiesMonster";
+import BtnActionsMonster from "../SingeMonster/BtnActionsMonster";
+import { handleGnomesData, changeGnome } from "../../_store/actions";
 
 const MonsterList = () => {
-
   const loading = useSelector(state => state.basic.loading);
   const gnomes = useSelector(state => state.gnomes.gnomes);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(handleGnomesData(50,2342))
-  }, [])
+    dispatch(handleGnomesData(50, 2342));
+  }, []);
 
- /* const deleteGnome = id => {
+  /* const deleteGnome = id => {
     console.log("AAA");
     let gnomes = [...this.state.gnomes.gnomes];
     gnomes.splice(id, 1);
@@ -47,15 +54,15 @@ const MonsterList = () => {
   }*/
 
   return (
-    <div className={stylesMonster.monsterList}>
-      {loading && <CircularProgress/>}
+    <div>
+      {loading && <CircularProgress />}
       {!loading && (
         <Container>
           <Typography variant="h4">Gnomes</Typography>
-         {/*<Button onClick={replaceGnome}>MORE</Button>*/}
-          <div className={stylesMonster.monsterList}>
+          {/*<Button onClick={replaceGnome}>MORE</Button>*/}
+          <div className="monster-list">
             <Paper>
-              <Table>
+              {/*<Table>
                 {gnomes.map((gnome, index) => (
                   <MonsterElement
                     key={index}
@@ -66,17 +73,41 @@ const MonsterList = () => {
                     strenghtNew={gnome.strenghtNew}
                     strenght={gnome.strenght}
                     //deleteGnome={() => deleteGnome(gnome.id)}
-                   //gnomeChange={event => gnomeChange(event, gnome.id)}
+                    //gnomeChange={event => gnomeChange(event, gnome.id)}
                   />
                 ))}
-              </Table>
+              </Table>*/}
+
+              <TableBody>
+                {gnomes.map((gnome, index) => (
+                  <TableRow className='monster-list'>
+                    <TableCell className='monster-list__table-profil-cell'>
+                      <MetricMonster
+                        key={index}
+                        name={gnome.name}
+                        age={gnome.age}
+                      />
+                    </TableCell>
+
+                    <TableCell className='monster-list__table-profil-cell'>
+                      <PropertiesMonster
+                        key="index"
+                        strenght={gnome.strenght}
+                      />
+                    </TableCell>
+                    <TableCell className='monster-list__table-action-cell'>
+                      <BtnActionsMonster></BtnActionsMonster>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
             </Paper>
           </div>
         </Container>
       )}
     </div>
   );
-}
+};
 
 export default MonsterList;
 // class MonstersList extends React.Component {

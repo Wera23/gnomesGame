@@ -1,74 +1,36 @@
-.monsterCell {
+.monster-list {
+  margin: 40px 0;
+
+  &__table-profil-cell{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+  }
+
+  &__table-action-cell{
+    display: flex;
+    width: 20vw
+  }
+  
+}
+
+.monster-metric {
+  padding-left: 20px;
   display: flex;
   flex-direction: column;
-  width: 40vw;
-}
 
-.monsterCellAction{
-display: flex;
-width: 20vw;}
-
-.monsterCellActionBtn{
-  display: flex;
-}
-
-.separate{
-  padding: 10px;
-}
-
-.data{
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.name{
+  &__monster_name{
     font-weight: 600;
-}
+  }
 
-.age{
+  &__monster_age{
     font-size: 12px;
     font-weight: 200;
+  }
 }
 
-.monsterProfile {
+
+.btn-actions-single-monster{
   display: flex;
-  align-items: center;
+  justify-content: space-around;
 }
-
-.tableBody {
-  display: flex;
-}
-
-.monsterList {
-    margin: 40px 0;
-}
-
-
-
-  .dialogImage,
-  .dialogImageCreate{
-     
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    width: 230px;
-    height: 230px;
-  }
-
-  .dialogImageCreate{
-    // background-image: url('../../assets/imgMonster2.jpg');
-  }
-
-  .dialogImage{
-    // background-image: url('../../assets/imgMonster.jpg');
-  }
-
-  .dialogContent{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-  }
-
