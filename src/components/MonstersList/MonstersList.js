@@ -63,30 +63,36 @@ const MonsterList = () => {
           {/*<Button onClick={replaceGnome}>MORE</Button>*/}
           <div className="monster-list">
             <Paper>
-             
               <TableBody>
                 {gnomes.map((gnome, index) => (
-                  <TableRow className='monster-list'>
-                    
-                    <TableCell className='monster-list__table-profil-cell'>
-                      <div className='monster-list__cell-inline'>
-
-                      <Avatar>G</Avatar>
-                      <MetricMonster
-                        key={index}
-                        name={gnome.name}
-                        age={gnome.age}
-                      /></div>
+                  <TableRow className="monster-list">
+                    <TableCell className="monster-list__table-profil-cell">
+                      <div className="monster-list__cell-inline">
+                        <Avatar>G</Avatar>
+                        <MetricMonster
+                          key={index}
+                          name={gnome.name}
+                          age={gnome.age}
+                        />
+                      </div>
                     </TableCell>
-                    
 
-                    <TableCell className='monster-list__table-profil-cell'>
+                    <TableCell className="monster-list__table-profil-cell">
                       <PropertiesMonster
                         key="index"
                         strenght={gnome.strenght}
                       />
+                      <div className="strenght-bar">
+                        <div className="strenght-bar__tinted-field">
+                          <div
+                            className="strenght-bar__tinted-field--tinted"
+                            style={{ width: gnome.strenght + "%" }}
+                          ></div>
+                        </div>
+                      </div>
                     </TableCell>
-                    <TableCell className='monster-list__table-action-cell'>
+
+                    <TableCell className="monster-list__table-action-cell">
                       <BtnActionsMonster></BtnActionsMonster>
                     </TableCell>
                   </TableRow>

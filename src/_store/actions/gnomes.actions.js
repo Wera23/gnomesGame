@@ -24,6 +24,7 @@ export function getGnomes(gnomes) {
     }
 }
 
+
 export function changeGnome(gnome) {
     return {
         payload: gnome,

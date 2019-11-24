@@ -2,7 +2,7 @@ import { USER_DATA } from "../constants";
 
 const initialUserState = {
     current: {
-        name: "Weronika Chodanionek",
+        name: "Wera Chodanionek",
         age: "26",
         level: "beginner",
         avatar: "https://i.ibb.co/1Lqv9Ch/avatar.jpg"        

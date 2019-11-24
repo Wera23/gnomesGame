@@ -1,4 +1,4 @@
-import { GET_GNOMES, CHANGE_GNOME } from "../constants";
+import { GET_GNOMES, CHANGE_GNOME} from "../constants";
 
 const initialGnomesState = {
     gnomes: []
@@ -28,6 +28,9 @@ export function gnomes(state = initialGnomesState, action) {
                 ...state,
                 gnomes: payload
             };
+        
+        
+            
         case CHANGE_GNOME:
             return {
                 ...state,

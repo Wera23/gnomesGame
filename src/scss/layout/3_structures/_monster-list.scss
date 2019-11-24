@@ -38,6 +38,10 @@
 
 .monster-properties{
   color: $font_color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &--strong {
     font-weight: 600;
   }

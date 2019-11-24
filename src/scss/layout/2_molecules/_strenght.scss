@@ -1,20 +1,22 @@
-.strenght {
-    &__label {
 
+.strenght-bar {
+
+    margin-left: 20px;
+
+  &__tinted-field {
+    border: 1px solid rgb(122, 0, 81);
+    width: 100px;
+    height: 20px;
+    border-radius: 25px;
+    position: relative;
+ 
+    &--tinted {
+      background-color: rgba(122, 0, 81, 0.37);
+      position: absolute;
+      
+      height: 20px;
+      border-radius: 25px;   
     }
+  
+}}
 
-    &__numbers {
-
-    }
-
-    &__line {
-
-        &--empty {
-
-        }
-
-        &--filled {
-
-        }
-    }
-}
