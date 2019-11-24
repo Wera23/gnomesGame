@@ -1,11 +1,11 @@
 import React from "react";
 import {
-  Button,
   Dialog,
   DialogActions,
   DialogContent,
   TextField
 } from "@material-ui/core/";
+import { StyledButton } from "../Forms/StyledButton";
 
 export default function AlertDialog(props) {
   const [open, setOpen] = React.useState(false);
@@ -20,9 +20,9 @@ export default function AlertDialog(props) {
 
   return (
     <div>
-      <Button color="secondary" variant="outlined" small onClick={handleClickOpen}>
+      <StyledButton color="secondary" variant="outlined" small onClick={handleClickOpen}>
         Edit
-      </Button>
+      </StyledButton>
 
       <Dialog
         open={open}
@@ -65,7 +65,7 @@ export default function AlertDialog(props) {
             </form>
           </DialogContent>
         <DialogActions>
-          <Button
+          <StyledButton
             variant="outlined"
             size="small"
             color="secondary"
@@ -73,8 +73,8 @@ export default function AlertDialog(props) {
             onClick={handleClose}
           >
             Cancel
-          </Button>
-          <Button
+          </StyledButton>
+          <StyledButton
             variant="outlined"
             size="small"
             color="secondary"
@@ -82,7 +82,7 @@ export default function AlertDialog(props) {
             onClick={props.gnomeChange}
           >
             Save
-          </Button>
+          </StyledButton>
         </DialogActions>
         </div>
       </Dialog>

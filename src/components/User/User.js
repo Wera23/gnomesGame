@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Avatar, Typography } from "@material-ui/core";
+import { Avatar } from "@material-ui/core";
+import { StyledTypography } from '../Forms/StyledTypography'
 
 
 const User = () => {
@@ -10,8 +11,8 @@ const User = () => {
     <div className='user'>
       <Avatar alt="user" src={user.avatar} size="20" />
       <div className='user__user-panel'>
-        <Typography variant="h6"> {user.name} </Typography>
-        <Typography variant="body2"> {user.level} </Typography>
+        <StyledTypography variant="h3"> {user.name} </StyledTypography>
+        <StyledTypography variant="h4"> {user.level} </StyledTypography>
       </div>
     </div>
   );

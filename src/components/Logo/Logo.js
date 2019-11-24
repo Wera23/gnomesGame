@@ -1,12 +1,17 @@
 import React from "react";
-import { Avatar, Typography, Grid } from "@material-ui/core/";
 
 const logo = props => (
   <div>
-    <Grid container justify="center" alignItems="center">
-      <Avatar className="">j!</Avatar>
-      <Typography> {props.logo} </Typography>
-    </Grid>
+    <img
+      srcset="logo.jpg 320w,
+             logo@2x.jpg 480w,
+             logo@3x.jpg 800w"
+      sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+      src="logo.jpg"
+      alt="Logo"
+    ></img>
   </div>
 );
 
