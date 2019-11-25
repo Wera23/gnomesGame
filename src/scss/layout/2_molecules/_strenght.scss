@@ -1,22 +1,23 @@
 
 .strenght-bar {
-
-    margin-left: 20px;
+  $size: 10px;
+  margin-left: 20px;
 
   &__tinted-field {
-    border: 1px solid rgb(122, 0, 81);
     width: 100px;
-    height: 20px;
-    border-radius: 25px;
+    height: $size;
+      background-color: $app_background;
+      border-radius: $size;
     position: relative;
+    overflow: hidden;
  
     &--tinted {
-      background-color: rgba(122, 0, 81, 0.37);
+      background-color: $pink;
       position: absolute;
-      
-      height: 20px;
-      border-radius: 25px;   
+      height: $size;
+      border-radius: $size;   
     }
   
 }}
+
 

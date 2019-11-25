@@ -4,21 +4,6 @@ const initialGnomesState = {
     gnomes: []
 }
 
-const replaceGnome = (newGnome, oldGnome, gnomes) => {
-    const index = gnomes.indexOf(oldGnome[0]);
-    console.log(oldGnome);
-    console.log(newGnome);
-    console.log(gnomes);
-    console.log(index);
-    console.log(gnomes[index] = [newGnome])
-
-    if (~index) {
-        return gnomes[index] = newGnome;
-    } else {
-        return gnomes;
-    }
-}
-
 export function gnomes(state = initialGnomesState, action) {
     const { payload, type } = action;
 
@@ -28,13 +13,14 @@ export function gnomes(state = initialGnomesState, action) {
                 ...state,
                 gnomes: payload
             };
-        
-        
-            
         case CHANGE_GNOME:
+            const index = state.gnomes.findIndex(gnome => gnome.id === payload.id)
             return {
                 ...state,
-                gnomes: replaceGnome(payload, state.gnomes.filter(gnome => gnome.id === payload.id), state.gnomes)
+                gnomes: [
+                    ...state.gnomes.slice(0, index), 
+                    payload,
+                    ...state.gnomes.slice(index + 1)]
             }
         default:
             return state;

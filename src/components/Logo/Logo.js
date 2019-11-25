@@ -1,20 +1,21 @@
 import React from "react";
-import logo1 from '../../assets/logo.png';
+// import logo from './assets/logo.png';
+// import logo2 from './assets/logo@2x.png';
+// import logo3 from './assets/logo@3x.png';
 
-
-const logo = props => (
+const Logo = () => (
   <div>
-    <img 
-      srcset="logo1 320w,
-             logo@2x 480w,
-             logo@3x 800w"
-      sizes="(max-width: 320px) 280px,
-            (max-width: 480px) 440px,
-            800px"
-      src="logo"
+    {/* <img 
+      srcset={`${logo} 320w,
+             ${logo2} 480w,
+             ${logo3} 800w`}
+      sizes="(max-width: 320px) 98px,
+            (max-width: 480px) 196px,
+            294px"
+      src={logo3}
       alt="Logo"
-    ></img>
+    ></img> */}
   </div>
 );
 
-export default logo;
+export default Logo;

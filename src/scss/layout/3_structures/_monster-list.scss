@@ -34,8 +34,6 @@
     font-weight: 200;
   }
 }
-
-
 .monster-properties{
   color: $font_color;
   display: flex;
@@ -44,6 +42,10 @@
 
   &--strong {
     font-weight: 600;
+  }
+
+  &--width{
+    padding: 20px;
   }
 }
 

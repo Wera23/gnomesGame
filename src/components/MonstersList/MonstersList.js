@@ -7,13 +7,13 @@ import {
   TableRow,
   TableCell,
   CircularProgress,
-  Avatar
+  Avatar, Button
 } from "@material-ui/core/";
 import { StyledTypography } from "../Forms/StyledTypography";
 import MetricMonster from "../SingeMonster/MetricMonster";
 import PropertiesMonster from "../SingeMonster/PropertiesMonster";
 import BtnActionsMonster from "../SingeMonster/BtnActionsMonster";
-import { handleGnomesData } from "../../_store/actions";
+import { handleGnomesData, changeGnome } from "../../_store/actions";
 
 const MonsterList = () => {
   const loading = useSelector(state => state.basic.loading);
@@ -25,6 +25,10 @@ const MonsterList = () => {
     dispatch(handleGnomesData(50, 2342));
   }, []);
 
+  useEffect(() => {
+    console.log("changes");
+  }, [gnomes])
+
   /* const deleteGnome = id => {
     console.log("AAA");
     let gnomes = [...this.state.gnomes.gnomes];
@@ -33,7 +37,7 @@ const MonsterList = () => {
     return;
   };*/
 
-  /*const replaceGnome = () => {
+  const replaceGnome = () => {
     const gnome = {
       id: 2343,
       name: "New name",
@@ -41,7 +45,7 @@ const MonsterList = () => {
       strenght: 70
     }
     dispatch(changeGnome(gnome));
-  }*/
+  }
 
   /*const gnomeChange = event => {
     this.setState({
@@ -60,7 +64,7 @@ const MonsterList = () => {
       {!loading && (
         <Container>
           <StyledTypography variant="h2">Gnomes</StyledTypography>
-          {/*<Button onClick={replaceGnome}>MORE</Button>*/}
+          <Button onClick={replaceGnome}>MORE</Button>
           <div className="monster-list">
             <Paper>
               <TableBody>
@@ -82,14 +86,7 @@ const MonsterList = () => {
                         key="index"
                         strenght={gnome.strenght}
                       />
-                      <div className="strenght-bar">
-                        <div className="strenght-bar__tinted-field">
-                          <div
-                            className="strenght-bar__tinted-field--tinted"
-                            style={{ width: gnome.strenght + "%" }}
-                          ></div>
-                        </div>
-                      </div>
+                     
                     </TableCell>
 
                     <TableCell className="monster-list__table-action-cell">
