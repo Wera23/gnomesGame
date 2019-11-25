@@ -1,8 +1,5 @@
 .dialog {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include centralize;
   padding: 40px;
 
   &__monster {
@@ -19,5 +16,9 @@
     &--edit {
         background-image: url("../../../assets/imgMonster.jpg");
     }
+  }
+
+  &__form {
+    @include centralize;
   }
 }

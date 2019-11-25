@@ -1,9 +1,9 @@
 import React from "react";
+import NoData from "../NoData/NoData";
 
 const Trolls = () => (
   <div className="trolls">
-    <div className="trolls__image"></div>
-    <p className="trolls__info">I'm sorry. There are no trolls at home now.</p>
+    <NoData text="I'm sorry. There are no trolls at home now." />
   </div>
 );
 

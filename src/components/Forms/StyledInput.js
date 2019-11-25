@@ -1,7 +1,7 @@
 import { fade, withStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 
-const StyledInput = withStyles(theme => ({
+export const StyledInput = withStyles(theme => ({
     root: {
       'label + &': {
         marginTop: theme.spacing(3),
@@ -21,5 +21,3 @@ const StyledInput = withStyles(theme => ({
       },
     },
   }))(InputBase);
-
-  export default StyledInput;

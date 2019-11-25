@@ -14,7 +14,7 @@ import { StyledTypography } from "../Forms/StyledTypography";
 import MetricMonster from "../SingeMonster/MetricMonster";
 import PropertiesMonster from "../SingeMonster/PropertiesMonster";
 import BtnActionsMonster from "../SingeMonster/BtnActionsMonster";
-import { handleGnomesData, changeGnome } from "../../_store/actions";
+import { handleGnomesData, deleteGnome } from "../../_store/actions";
 
 const MonsterList = () => {
   const loading = useSelector(state => state.basic.loading);
@@ -26,17 +26,9 @@ const MonsterList = () => {
     dispatch(handleGnomesData(50, 2342));
   }, []);
 
-  useEffect(() => {
-    console.log("changes");
-  }, [gnomes]);
-
-  /* const deleteGnome = id => {
-    console.log("AAA");
-    let gnomes = [...this.state.gnomes.gnomes];
-    gnomes.splice(id, 1);
-    this.setState({ gnomes: gnomes });
-    return;
-  };*/
+  const deleteMonster = gnome => {
+    dispatch(deleteGnome(gnome))
+  };
 
   return (
     <div>
@@ -73,6 +65,7 @@ const MonsterList = () => {
                         age={gnome.age}
                         name={gnome.name}
                         strenght={gnome.strenght}
+                        deleteGnome={() => deleteMonster(gnome)}
                       ></BtnActionsMonster>
                     </TableCell>
                   </TableRow>

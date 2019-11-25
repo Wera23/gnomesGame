@@ -3,13 +3,14 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  TextField
+  InputLabel,
+  FormControl
 } from "@material-ui/core/";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { changeGnome } from "../../_store/actions";
 import { StyledButton } from "../Forms/StyledButton";
-import StyledInput from "../Forms/StyledInput";
+import { StyledInput } from "../Forms/StyledInput";
 
 export default function AlertDialog(props) {
   const [open, setOpen] = useState(false);
@@ -61,36 +62,54 @@ export default function AlertDialog(props) {
           <div className="dialog__monster dialog__monster--edit" />
 
           <DialogContent>
-            <form onSubmit={props.gnomeSubmit}>
-              <StyledInput
-                defaultValue={props.name}
-                name="name"
-                margin="normal"
-                label="Name"
-                onChange={handleInputChange}
-                fullWidth
-                color="secondary"
-              />
+            <form className="dialog__form" onSubmit={props.gnomeSubmit}>
+              <FormControl>
+                <InputLabel shrink htmlFor="name-input">
+                  Name
+                </InputLabel>
+                <StyledInput
+                  id="name-input"
+                  defaultValue={props.name}
+                  name="name"
+                  margin="normal"
+                  label="Name"
+                  onChange={handleInputChange}
+                  fullWidth
+                  color="secondary"
+                />
+              </FormControl>
 
-              <StyledInput
-                defaultValue={props.age}
-                margin="normal"
-                name="age"
-                label="Age"
-                onChange={handleInputChange}
-                fullWidth
-                color="secondary"
-              />
+              <FormControl>
+                <InputLabel shrink htmlFor="age-input">
+                  Age
+                </InputLabel>
+                <StyledInput
+                  id="age-input"
+                  defaultValue={props.age}
+                  margin="normal"
+                  name="age"
+                  label="Age"
+                  onChange={handleInputChange}
+                  fullWidth
+                  color="secondary"
+                />
+              </FormControl>
 
-              <StyledInput
-                defaultValue={props.strenght}
-                margin="normal"
-                name="strenght"
-                label="Strenght"
-                onChange={handleInputChange}
-                color="secondary"
-                fullWidth
-              />
+              <FormControl>
+                <InputLabel shrink htmlFor="strenght-input">
+                  Strenght
+                </InputLabel>
+                <StyledInput
+                  id="strenght-input"
+                  defaultValue={props.strenght}
+                  margin="normal"
+                  name="strenght"
+                  label="Strenght"
+                  onChange={handleInputChange}
+                  color="secondary"
+                  fullWidth
+                />
+              </FormControl>
             </form>
           </DialogContent>
           <DialogActions>
