@@ -1,4 +1,3 @@
-
 .strenght-bar {
   $size: 10px;
   margin-left: 20px;
@@ -6,18 +5,16 @@
   &__tinted-field {
     width: 100px;
     height: $size;
-      background-color: $app_background;
-      border-radius: $size;
+    background-color: $strenght_bar;
+    border-radius: $size;
     position: relative;
     overflow: hidden;
- 
+
     &--tinted {
       background-color: $pink;
       position: absolute;
       height: $size;
-      border-radius: $size;   
+      border-radius: $size;
     }
-  
-}}
-
-
+  }
+}

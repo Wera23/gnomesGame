@@ -38,18 +38,20 @@ export default function AlertDialog(props) {
             <form onSubmit={props.gnomeSubmit}>
               <TextField
                 defaultValue={props.name}
+                name={props.name}
                 margin="normal"
                 label="Name"
-                onChange={props.gnomeChange}
+                onChange={props.handleInputChange}
                 fullWidth
                 color="secondary"
               />
 
               <TextField
                 defaultValue={props.age}
+                age={props.age}
                 margin="normal"
                 label="Age"
-                onChange={props.gnomeChange}
+                onChange={props.handleInputChange}
                 fullWidth
                 color="secondary"
               />
@@ -57,8 +59,9 @@ export default function AlertDialog(props) {
               <TextField
                 defaultValue={props.strenght}
                 margin="normal"
+                strenght={props.strenght}
                 label="Strenght"
-                onChange={props.gnomeChange}
+                onChange={props.handleInputChange}
                 color="secondary"
                 fullWidth
               />
@@ -79,7 +82,7 @@ export default function AlertDialog(props) {
             size="small"
             color="secondary"
             type="onSubmit"
-            onClick={props.gnomeChange}
+            onClick={props.replaceGnome}
           >
             Save
           </StyledButton>

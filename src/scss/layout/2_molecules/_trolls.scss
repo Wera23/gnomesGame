@@ -1,0 +1,25 @@
+.trolls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;
+    height: 70vh;
+
+    &__trolls-image{
+        background-image: url('../../../assets/trolls.png');
+        width: 300px;
+        height: 407px;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &__trolls-inf{
+        margin-top: 30px;
+        font-size: 16px;
+        color: $plum;
+        text-align: center;
+    }
+}
+

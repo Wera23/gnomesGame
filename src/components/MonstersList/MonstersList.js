@@ -37,26 +37,22 @@ const MonsterList = () => {
     return;
   };*/
 
-  const replaceGnome = () => {
+  const replaceGnome = (e) => {
+    e.preventDefault();
     const gnome = {
-      id: 2343,
-      name: "New name",
-      age: 20,
-      strenght: 70
+      id: 2347,
+      name: "Wera name",
+      age: e.target.defaultValue,
+      strenght: 3000
+      
     }
     dispatch(changeGnome(gnome));
   }
 
-  /*const gnomeChange = event => {
-    this.setState({
-      strenght: event.target.defaultValue
-    });
-    console.log(this.state)
-  };*/
 
-  /*const moreGnomes = () => {
-    dispatch(handleGnomesData(100, 3234));
-  }*/
+
+
+
 
   return (
     <div>
@@ -64,12 +60,12 @@ const MonsterList = () => {
       {!loading && (
         <Container>
           <StyledTypography variant="h2">Gnomes</StyledTypography>
-          <Button onClick={replaceGnome}>MORE</Button>
+         <Button onClick={replaceGnome}>MORE</Button>
           <div className="monster-list">
             <Paper>
               <TableBody>
                 {gnomes.map((gnome, index) => (
-                  <TableRow className="monster-list">
+                  <TableRow className="monster-list"  >
                     <TableCell className="monster-list__table-profil-cell">
                       <div className="monster-list__cell-inline">
                         <Avatar>G</Avatar>
@@ -90,7 +86,7 @@ const MonsterList = () => {
                     </TableCell>
 
                     <TableCell className="monster-list__table-action-cell">
-                      <BtnActionsMonster></BtnActionsMonster>
+                      <BtnActionsMonster age={gnome.age} name={gnome.name} strenght={gnome.strenght} ></BtnActionsMonster>
                     </TableCell>
                   </TableRow>
                 ))}
