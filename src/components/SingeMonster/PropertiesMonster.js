@@ -1,21 +1,19 @@
 import React from "react";
 
 const PropertiesMonster = props => (
-  <div className="monster-properties">
+  <div className="monster__propeteries">
     
-    <div className="strenght-bar">
-      <div className="strenght-bar__tinted-field">
+    <div className="strenght">
+      <div className="strenght__bar">
         <div
-          className="strenght-bar__tinted-field--tinted"
+          className="strenght__bar--tinted"
           style={{ width: props.strenght + "%" }}
         ></div>
       </div>
     </div>
 
-    <span className="monster-properties--width"> {props.strenght}/100</span>
-
-    <span className="monster-properties--strong"> Strenght </span>
-    
+    <span className="strenght__text">{props.strenght}/100</span>
+    <span className="strenght__text strenght__text--strong"> Strenght</span>
   </div>
 );
 

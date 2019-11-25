@@ -1,0 +1,29 @@
+.monster {
+  &__metric {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    color: $font_color;
+
+    &-name {
+      font-weight: 600;
+    }
+
+    &-age {
+      font-size: 12px;
+      font-weight: 200;
+    }
+  }
+
+  &__propeteries {
+    color: $font_color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-around;
+  }
+}

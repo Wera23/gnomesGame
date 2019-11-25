@@ -5,10 +5,22 @@ import {
   DialogContent,
   TextField
 } from "@material-ui/core/";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { changeGnome } from "../../_store/actions";
 import { StyledButton } from "../Forms/StyledButton";
+import StyledInput from "../Forms/StyledInput";
 
 export default function AlertDialog(props) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [editedGnome, setEditedGnome] = useState({
+    id: props.id,
+    name: props.name,
+    age: props.age,
+    strenght: props.strenght
+  });
+
+  const dispatch = useDispatch();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -18,9 +30,25 @@ export default function AlertDialog(props) {
     setOpen(false);
   };
 
+  const replaceGnome = e => {
+    e.preventDefault();
+    dispatch(changeGnome(editedGnome));
+    setOpen(false);
+  };
+
+  const handleInputChange = e => {
+    const { name, value } = e.target;
+    setEditedGnome({ ...editedGnome, [name]: value });
+  };
+
   return (
     <div>
-      <StyledButton color="secondary" variant="outlined" small onClick={handleClickOpen}>
+      <StyledButton
+        color="secondary"
+        variant="outlined"
+        small
+        onClick={handleClickOpen}
+      >
         Edit
       </StyledButton>
 
@@ -28,68 +56,65 @@ export default function AlertDialog(props) {
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
-        
       >
-        <div className='dialog'>
-          <div className='dialog-background' />
-         
+        <div className="dialog">
+          <div className="dialog__monster dialog__monster--edit" />
 
           <DialogContent>
             <form onSubmit={props.gnomeSubmit}>
-              <TextField
+              <StyledInput
                 defaultValue={props.name}
-                name={props.name}
+                name="name"
                 margin="normal"
                 label="Name"
-                onChange={props.handleInputChange}
+                onChange={handleInputChange}
                 fullWidth
                 color="secondary"
               />
 
-              <TextField
+              <StyledInput
                 defaultValue={props.age}
-                age={props.age}
                 margin="normal"
+                name="age"
                 label="Age"
-                onChange={props.handleInputChange}
+                onChange={handleInputChange}
                 fullWidth
                 color="secondary"
               />
 
-              <TextField
+              <StyledInput
                 defaultValue={props.strenght}
                 margin="normal"
-                strenght={props.strenght}
+                name="strenght"
                 label="Strenght"
-                onChange={props.handleInputChange}
+                onChange={handleInputChange}
                 color="secondary"
                 fullWidth
               />
             </form>
           </DialogContent>
-        <DialogActions>
-          <StyledButton
-            variant="outlined"
-            size="small"
-            color="secondary"
-            type="onSubmit"
-            onClick={handleClose}
-          >
-            Cancel
-          </StyledButton>
-          <StyledButton
-            variant="outlined"
-            size="small"
-            color="secondary"
-            type="onSubmit"
-            onClick={props.replaceGnome}
-          >
-            Save
-          </StyledButton>
-        </DialogActions>
+          <DialogActions>
+            <StyledButton
+              variant="outlined"
+              size="small"
+              color="secondary"
+              type="onSubmit"
+              onClick={handleClose}
+            >
+              Cancel
+            </StyledButton>
+            <StyledButton
+              variant="contained"
+              size="small"
+              color="secondary"
+              type="onSubmit"
+              onClick={replaceGnome}
+            >
+              Save
+            </StyledButton>
+          </DialogActions>
         </div>
       </Dialog>
-      
     </div>
   );
 }

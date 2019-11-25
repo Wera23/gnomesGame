@@ -7,7 +7,8 @@ import {
   TableRow,
   TableCell,
   CircularProgress,
-  Avatar, Button
+  Avatar,
+  Button
 } from "@material-ui/core/";
 import { StyledTypography } from "../Forms/StyledTypography";
 import MetricMonster from "../SingeMonster/MetricMonster";
@@ -27,7 +28,7 @@ const MonsterList = () => {
 
   useEffect(() => {
     console.log("changes");
-  }, [gnomes])
+  }, [gnomes]);
 
   /* const deleteGnome = id => {
     console.log("AAA");
@@ -37,37 +38,19 @@ const MonsterList = () => {
     return;
   };*/
 
-  const replaceGnome = (e) => {
-    e.preventDefault();
-    const gnome = {
-      id: 2347,
-      name: "Wera name",
-      age: e.target.defaultValue,
-      strenght: 3000
-      
-    }
-    dispatch(changeGnome(gnome));
-  }
-
-
-
-
-
-
   return (
     <div>
       {loading && <CircularProgress />}
       {!loading && (
         <Container>
           <StyledTypography variant="h2">Gnomes</StyledTypography>
-         <Button onClick={replaceGnome}>MORE</Button>
           <div className="monster-list">
             <Paper>
               <TableBody>
                 {gnomes.map((gnome, index) => (
-                  <TableRow className="monster-list"  >
-                    <TableCell className="monster-list__table-profil-cell">
-                      <div className="monster-list__cell-inline">
+                  <TableRow className="monsters">
+                    <TableCell className="monsters__table-profil-cell">
+                      <div className="monsters__cell-inline">
                         <Avatar>G</Avatar>
                         <MetricMonster
                           key={index}
@@ -77,16 +60,20 @@ const MonsterList = () => {
                       </div>
                     </TableCell>
 
-                    <TableCell className="monster-list__table-profil-cell">
+                    <TableCell className="monsters__table-profil-cell">
                       <PropertiesMonster
                         key="index"
                         strenght={gnome.strenght}
                       />
-                     
                     </TableCell>
 
-                    <TableCell className="monster-list__table-action-cell">
-                      <BtnActionsMonster age={gnome.age} name={gnome.name} strenght={gnome.strenght} ></BtnActionsMonster>
+                    <TableCell className="monsters__table-action-cell">
+                      <BtnActionsMonster
+                        id={gnome.id}
+                        age={gnome.age}
+                        name={gnome.name}
+                        strenght={gnome.strenght}
+                      ></BtnActionsMonster>
                     </TableCell>
                   </TableRow>
                 ))}

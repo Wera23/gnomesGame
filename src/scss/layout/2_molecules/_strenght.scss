@@ -1,10 +1,11 @@
-.strenght-bar {
+.strenght {
   $size: 10px;
   margin-left: 20px;
 
-  &__tinted-field {
-    width: 100px;
+  &__bar {
+    width: 150px;
     height: $size;
+    margin-right: 20px;
     background-color: $strenght_bar;
     border-radius: $size;
     position: relative;
@@ -15,6 +16,14 @@
       position: absolute;
       height: $size;
       border-radius: $size;
+    }
+  }
+
+  &__text {
+    margin-right: 10px;
+
+    &--strong {
+      font-weight: 600;
     }
   }
 }

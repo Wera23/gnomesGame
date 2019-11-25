@@ -1,10 +1,10 @@
 import React from 'react'
 
-const metricMonster = (props) => (
-    <div className='monster-metric'>
-        <span className='monster-metric--name'>{props.name}</span>
-        <span className='monster-metric--age'>Age: {props.age}</span>
+const MetricMonster = (props) => (
+    <div className='monster__metric'>
+        <span className='monster__metric-name'>{props.name}</span>
+        <span className='monster__metric-age'>Age: {props.age}</span>
     </div>
 )
 
-export default metricMonster
+export default MetricMonster;

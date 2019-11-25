@@ -1,0 +1,18 @@
+.monsters {
+  margin: 40px 0;
+
+  &__table-profil-cell {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+  }
+
+  &__table-action-cell {
+    display: flex;
+    width: 20vw;
+  }
+
+  &__cell-inline {
+    display: flex;
+  }
+}

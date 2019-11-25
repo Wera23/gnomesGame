@@ -14,10 +14,11 @@ const history = createHistory();
 ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider theme={theme}>
-      <App />
-      <Router history={history}>
-        <Routes />
-      </Router>
+      <App>
+        <Router history={history}>
+          <Routes />
+        </Router>
+      </App>
     </MuiThemeProvider>
   </Provider>,
   document.getElementById("root")

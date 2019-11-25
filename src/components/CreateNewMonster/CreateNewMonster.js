@@ -20,7 +20,11 @@ export default function AlertDialog(props) {
 
   return (
     <div>
-      <StyledButton color="secondary" variant="contained" onClick={handleClickOpen}>
+      <StyledButton
+        color="secondary"
+        variant="contained"
+        onClick={handleClickOpen}
+      >
         Create Monster
       </StyledButton>
 
@@ -28,10 +32,9 @@ export default function AlertDialog(props) {
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
-        
       >
-        <div className='dialog'>
-          <div className='dialog__dialog-background' />
+        <div className="dialog">
+          <div className="dialog__monster dialog__monster--add" />
 
           <DialogContent>
             <form onSubmit={props.gnomeSubmit}>
@@ -58,7 +61,7 @@ export default function AlertDialog(props) {
             </form>
           </DialogContent>
           <DialogActions>
-          <StyledButton
+            <StyledButton
               variant="outlined"
               size="small"
               color="secondary"

@@ -1,17 +1,23 @@
 .dialog {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
 
-    &__dialog-background{
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        width: 230px;
-        height: 230px;
-        background-image: url('../../../assets/imgMonster2.jpg')    
-    } 
+  &__monster {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 230px;
+    height: 230px;
 
+    &--add {
+        background-image: url("../../../assets/imgMonster2.jpg");
+    }
+
+    &--edit {
+        background-image: url("../../../assets/imgMonster.jpg");
+    }
+  }
 }
