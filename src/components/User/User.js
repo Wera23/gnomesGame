@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Avatar } from "@material-ui/core";
+import AvatarUser from '../User/AvatarUser';
 import { StyledTypography } from '../Forms/StyledTypography'
 
 
@@ -9,9 +9,9 @@ const User = () => {
 
   return (
     <div className='user'>
-      <Avatar alt="user" src={user.avatar} size="20" />
+      <AvatarUser />
       <div className='user__user-panel'>
-        <StyledTypography variant="h3"> {user.name} </StyledTypography>
+        <StyledTypography variant="h3">  {user.name} </StyledTypography>
         <StyledTypography variant="h4"> {user.level} </StyledTypography>
       </div>
     </div>
