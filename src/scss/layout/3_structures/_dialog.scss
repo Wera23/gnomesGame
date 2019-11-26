@@ -10,15 +10,19 @@
     height: 230px;
 
     &--add {
-        background-image: url("../../../assets/imgMonster2.jpg");
+      background-image: url("../../../assets/imgMonster2.jpg");
     }
 
     &--edit {
-        background-image: url("../../../assets/imgMonster.jpg");
+      background-image: url("../../../assets/imgMonster.jpg");
     }
   }
 
   &__form {
     @include centralize;
+
+    &-element {
+      padding-bottom: 15px;
+    }
   }
 }

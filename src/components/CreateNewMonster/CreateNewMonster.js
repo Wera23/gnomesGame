@@ -3,12 +3,13 @@ import { useDispatch } from "react-redux";
 import {
   Dialog,
   DialogActions,
-  DialogContent
+  DialogContent,
+  FormControl,
+  InputLabel
 } from "@material-ui/core/";
 import { StyledButton } from "../Forms/StyledButton";
 import { StyledInput } from "../Forms/StyledInput";
 import { addGnome } from "../../_store/actions";
-
 
 export default function AlertDialog(props) {
   const [open, setOpen] = useState(false);
@@ -64,46 +65,74 @@ export default function AlertDialog(props) {
           <div className="dialog__monster dialog__monster--add" />
 
           <DialogContent>
-            <form onSubmit={props.gnomeSubmit}>
-            <StyledInput
-                defaultValue={props.id}
-                name="id"
-                margin="normal"
-                label="Id"
-                onChange={handleInputChange}
-                fullWidth
-                color="secondary"
-              />
+            <form className="dialog__form" onSubmit={props.gnomeSubmit}>
 
-            <StyledInput
-                defaultValue={props.name}
-                name="name"
-                margin="normal"
-                label="Name"
-                onChange={handleInputChange}
-                fullWidth
-                color="secondary"
-              />
+              <FormControl> 
+                <InputLabel shrink htmlFor="id-input">
+                  Id
+                </InputLabel>
 
-              <StyledInput
-                defaultValue={props.age}
-                margin="normal"
-                name="age"
-                label="Age"
-                onChange={handleInputChange}
-                fullWidth
-                color="secondary"
-              />
+                <StyledInput
+                  defaultValue={props.id}
+                  name="id"
+                  margin="normal"
+                  label="Id"
+                  onChange={handleInputChange}
+                  fullWidth
+                  color="secondary"
+                  className="dialog__form-element"
+                />
+              </FormControl>
+              <FormControl>
+                <InputLabel shrink htmlFor="name-input">
+                  Name
+                </InputLabel>
 
-              <StyledInput
-                defaultValue={props.strenght}
-                margin="normal"
-                name="strenght"
-                label="Strenght"
-                onChange={handleInputChange}
-                color="secondary"
-                fullWidth
-              />
+                <StyledInput
+                  defaultValue={props.name}
+                  name="name"
+                  margin="normal"
+                  label="Name"
+                  onChange={handleInputChange}
+                  fullWidth
+                  color="secondary"
+                  className="dialog__form-element"
+                />
+              </FormControl>
+
+              <FormControl>
+                <InputLabel shrink htmlFor="age-input">
+                  Age
+                </InputLabel>
+
+                <StyledInput
+                  defaultValue={props.age}
+                  margin="normal"
+                  name="age"
+                  label="Age"
+                  onChange={handleInputChange}
+                  fullWidth
+                  color="secondary"
+                  className="dialog__form-element"
+                />
+              </FormControl>
+
+              <FormControl>
+                <InputLabel shrink htmlFor="strenght-input">
+                  Strenght
+                </InputLabel>
+
+                <StyledInput
+                  defaultValue={props.strenght}
+                  margin="normal"
+                  name="strenght"
+                  label="Strenght"
+                  onChange={handleInputChange}
+                  color="secondary"
+                  fullWidth
+                  className="dialog__form-element"
+                />
+              </FormControl>
             </form>
           </DialogContent>
           <DialogActions>
@@ -117,7 +146,7 @@ export default function AlertDialog(props) {
               Cancel
             </StyledButton>
             <StyledButton
-              variant="outlined"
+              variant="contained"
               size="small"
               color="secondary"
               type="onSubmit"

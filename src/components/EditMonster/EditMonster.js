@@ -76,6 +76,7 @@ export default function AlertDialog(props) {
                   onChange={handleInputChange}
                   fullWidth
                   color="secondary"
+                  className="dialog__form-element"v
                 />
               </FormControl>
 
@@ -92,6 +93,7 @@ export default function AlertDialog(props) {
                   onChange={handleInputChange}
                   fullWidth
                   color="secondary"
+                  className="dialog__form-element"
                 />
               </FormControl>
 
@@ -108,6 +110,7 @@ export default function AlertDialog(props) {
                   onChange={handleInputChange}
                   color="secondary"
                   fullWidth
+                  className="dialog__form-element"
                 />
               </FormControl>
             </form>
