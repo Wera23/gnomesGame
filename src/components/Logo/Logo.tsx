@@ -1,9 +1,14 @@
+
 import React from "react";
 import logo from "../../assets/logo.png";
 import logo2 from "../../assets/logo@2x.png";
 import logo3 from "../../assets/logo@3x.png";
 
-const Logo = () => (
+
+
+
+const Logo = (props: any) => (
+  
   <div>
     <img
       srcSet={`${logo} 320w,

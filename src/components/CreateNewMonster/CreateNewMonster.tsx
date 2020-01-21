@@ -10,17 +10,23 @@ import {
 import { StyledButton } from "../Forms/StyledButton";
 import { StyledInput } from "../Forms/StyledInput";
 import { addGnome } from "../../_store/actions";
+import { IGnome } from "_models";
 
 interface IProps {
   name: string;
   age: number;
   id: number;
   strenght: number;
-  gnomeSubmit: Function;
- // label: string;
+  gnomeSubmit: Function;  
+  //nameNew: string;
+  //strenghtNew: number;
+  //ageNew: number;
+ // gnome: IGnome
 }
 
-export default function AlertDialog(props: IProps) {
+export default function AlertDialog(
+  props: IProps
+) {
   const [open, setOpen] = useState(false);
   const [newGnome, setNewGnome] = useState({
     id: "",
@@ -84,7 +90,7 @@ export default function AlertDialog(props: IProps) {
                   defaultValue={props.id}
                   name="id"
                   //margin="normal"
-                 //label="Id"
+                  //label="Id"
                   onChange={handleInputChange}
                   fullWidth
                   color="secondary"
@@ -103,8 +109,8 @@ export default function AlertDialog(props: IProps) {
                   fullWidth
                   color="secondary"
                   className="dialog__form-element"
-                // label="Name"
-                 //margin="normal"
+                  // label="Name"
+                  //margin="normal"
                 />
               </FormControl>
 
@@ -116,7 +122,7 @@ export default function AlertDialog(props: IProps) {
                 <StyledInput
                   defaultValue={props.age}
                   name="age"
-                 // label="Age"
+                  // label="Age"
                   onChange={handleInputChange}
                   fullWidth
                   color="secondary"
@@ -132,9 +138,9 @@ export default function AlertDialog(props: IProps) {
 
                 <StyledInput
                   defaultValue={props.strenght}
-                 // margin="normal"
+                  // margin="normal"
                   name="strenght"
-                 // label="Strenght"
+                  // label="Strenght"
                   onChange={handleInputChange}
                   color="secondary"
                   fullWidth
@@ -148,7 +154,7 @@ export default function AlertDialog(props: IProps) {
               variant="outlined"
               size="small"
               color="secondary"
-             // type="onSubmit"
+              // type="onSubmit"
               onClick={handleClose}
             >
               Cancel
@@ -157,7 +163,7 @@ export default function AlertDialog(props: IProps) {
               variant="contained"
               size="small"
               color="secondary"
-            //  type="onSubmit"
+              //  type="onSubmit"
               onClick={addNewGnome}
             >
               Save
