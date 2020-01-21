@@ -30,6 +30,8 @@ const MonsterList = () => {
     type: MonsterTypes.funny
   }
 
+  
+
   useEffect(() => {
     dispatch(handleGnomesData(50, 2342));
   }, []);
@@ -47,7 +49,7 @@ const MonsterList = () => {
           <div className="monster-list">
             <Paper>
               <TableBody>
-                {gnomes.map((gnome: IGnome, index: number) => (
+                {gnomes.map((gnome: IGnome, index: number, replaceGnome: Function, handleInputChange: Function) => (
                   <TableRow className="monsters">
                     <TableCell className="monsters__table-profil-cell">
                       <div className="monsters__cell-inline">
@@ -75,6 +77,8 @@ const MonsterList = () => {
                         name={gnome.name}
                         strenght={gnome.strenght}
                         deleteGnome={() => deleteMonster(gnome)}
+                        replaceGnome={replaceGnome}
+                        handleInputChange={handleInputChange}
                       ></BtnActionsMonster>
                     </TableCell>
                   </TableRow>
