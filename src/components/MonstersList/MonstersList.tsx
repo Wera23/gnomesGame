@@ -7,26 +7,34 @@ import {
   TableRow,
   TableCell,
   CircularProgress,
-  Avatar,
-  Button
+  Avatar
 } from "@material-ui/core/";
 import { StyledTypography } from "../Forms/StyledTypography";
 import MetricMonster from "../SingeMonster/MetricMonster";
-import PropertiesMonster from "../SingeMonster/PropertiesMonster";
+import { PropertiesMonster } from "../SingeMonster/PropertiesMonster";
 import BtnActionsMonster from "../SingeMonster/BtnActionsMonster";
 import { handleGnomesData, deleteGnome } from "../../_store/actions";
+import { IGnome, IMonster, MonsterColors, MonsterTypes } from "_models";
 
 const MonsterList = () => {
-  const loading = useSelector(state => state.basic.loading);
-  const gnomes = useSelector(state => state.gnomes.gnomes);
+  const loading = useSelector((state: any) => state.basic.loading);
+  const gnomes = useSelector((state: any) => state.gnomes.gnomes);
 
   const dispatch = useDispatch();
+
+  const monster: IMonster = {
+    age: 27,
+    color: MonsterColors.blue,
+    hasFur: true,
+    name: 'Andrzej',
+    type: MonsterTypes.funny
+  }
 
   useEffect(() => {
     dispatch(handleGnomesData(50, 2342));
   }, []);
 
-  const deleteMonster = gnome => {
+  const deleteMonster = (gnome: IGnome): void => {
     dispatch(deleteGnome(gnome))
   };
 
@@ -39,7 +47,7 @@ const MonsterList = () => {
           <div className="monster-list">
             <Paper>
               <TableBody>
-                {gnomes.map((gnome, index) => (
+                {gnomes.map((gnome: IGnome, index: number) => (
                   <TableRow className="monsters">
                     <TableCell className="monsters__table-profil-cell">
                       <div className="monsters__cell-inline">
@@ -56,6 +64,7 @@ const MonsterList = () => {
                       <PropertiesMonster
                         key="index"
                         strenght={gnome.strenght}
+                        monster={monster}
                       />
                     </TableCell>
 
